@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A TypeScript-based utility for resolving and managing software library dependencies, capable of parsing complex dependency graphs and expanding them to include transitive dependencies.
+Interview Test - A TypeScript-based utility for resolving and managing software library dependencies, capable of parsing complex dependency graphs and expanding them to include transitive dependencies.
 
 ## Prerequisites
 
@@ -13,10 +13,10 @@ A TypeScript-based utility for resolving and managing software library dependenc
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/library-dependency-resolver.git
+git clone https://github.com/oluwadamilarey/dependency-graph.git
 
 # Navigate to the project directory
-cd library-dependency-resolver
+cd dependency-graph
 
 # Install dependencies
 npm install
@@ -26,10 +26,12 @@ npm install
 
 ### 1. Create a Dependency File
 
-Create a text file (e.g., `dependencies.txt`) with your library dependencies. Example:
+Create a text file (e.g., `dependencies.txt`) with your library dependencies.
+in the tests/fixtures folder you'd find sample test cases for the
+Example:
 
 ```
-A depends on B C
+A depends on B Cw
 B depends on D
 C has no dependencies
 ```
@@ -38,25 +40,28 @@ C has no dependencies
 
 ```bash
 # Using npm start
-npm start -- path/to/dependencies.txt
+npm run start -- tests/fixtures/input1.txt
 
 # Alternatively, if you want to use node directly
-npx ts-node src/index.ts path/to/dependencies.txt
+npx ts-node src/index.ts tests/fixtures/input1.txt
+
+npx ts-node src/index.ts tests/fixtures/input1.txt
 ```
 
 ### Example Usage
 
 ```bash
 # Example with sample dependencies
-npm start -- ./dependencies.txt
+npm run start tests/fixtures/input1.txt
+
+# exapmple run with tests
+npm test -- tests/unit/dependency-resolver.test.ts
 ```
 
 ## Available Scripts
 
 - `npm start`: Run the dependency resolver
 - `npm test`: Run test suite
-- `npm run build`: Compile TypeScript to JavaScript
-- `npm run lint`: Run ESLint for code quality checks
 - `npm run test:watch`: Run tests in watch mode
 - `npm run test:coverage`: Generate test coverage report
 
@@ -107,21 +112,3 @@ npm run test:coverage
 # Compile TypeScript to JavaScript
 npm run build
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-Distributed under the MIT License. See `LICENSE` file for more information.
-
-## Contact
-
-Your Name - your.email@example.com
-
-Project Link: [https://github.com/yourusername/library-dependency-resolver](https://github.com/yourusername/library-dependency-resolver)
